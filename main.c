@@ -19,46 +19,31 @@ void Encryption()
 	
 	//key square generation
 	char cipherkey[5][5];
-    GenerateCipherKey(keyword,cipherkey);
+    	GenerateCipherKey(keyword,cipherkey);
 	printf("\n---KEYSQUARE---\n");
 	
 	//to print key square
 	for(int i=0;i<5;i++)
-    {
-        for(int j=0;j<5;j++)
-        {
-            printf("%c",cipherkey[i][j]);
-        }
-        printf("\n");
+   	 {
+      	  	for(int j=0;j<5;j++)
+       		 {
+           		 printf("%c",cipherkey[i][j]);
+       		 }
+       		 printf("\n");
 
-    }
-	
-	
-	
+   	 }
 	
 	
 	//---TAKING PLAIN TEXT AS INPUT AND REMOVING SPACES---	
 	printf("\n----Enter the text----\n");
 	fgets(plaintext,MAX,stdin);
 	int len=removeSpace(plaintext,MAX);
-	//fflush(stdin);
-	
-	
-
-	//printf("plaintext:%s\n",plaintext);
-	//printf("len:%d\n",len);	
-
-
 
 	//---TO MAKE IT EVEN---	
 	len=even(plaintext,len);
-	//printf("\nplaintext:%s",plaintext);
-	//printf("\nlen:%d",len);
 	
 	//---TO CONVERT IT TO UPPERCASE---
 	toUpperCase(plaintext, len);
-	//printf("\nplaintext:%s",plaintext);
-	//printf("\nlen:%d",len);
 	
 	//---TO ENCRYPT---
 	int pos[4]; //pos[0]=r1 pos[1]= c1 pos[2]=r2 pos[3]=c2
@@ -73,8 +58,7 @@ void Encryption()
 	
 	printf("\nPLAIN TEXT:%s ",plaintext);
 	printf("\nENCRYPTED TEXT:%s \n",result);	
-	
-	
+
 	
 }
 
@@ -94,40 +78,34 @@ void Decryption()
 	
 	//key square generation
 	char cipherkey[5][5];
-    GenerateCipherKey(keyword,cipherkey);
+   	GenerateCipherKey(keyword,cipherkey);
 	printf("\n---KEYSQUARE---\n");
 	
 	//to print key square
 	for(int i=0;i<5;i++)
-    {
-        for(int j=0;j<5;j++)
-        {
-            printf("%c",cipherkey[i][j]);
-        }
-        printf("\n");
+    	{
+        	for(int j=0;j<5;j++)
+        	{
+            	printf("%c",cipherkey[i][j]);
+        	}
+        	printf("\n");
 
-    }
-	
-	
+    	}
 	
 	//---TAKING ENCRYPTED TEXT AS INPUT AND REMOVING SPACES---	
 	printf("\n--Enter the text--");
 	fgets(encryptedtext,MAX,stdin);
 	int len=removeSpace(encryptedtext,MAX);
 	printf("encryptedtext:%s\n",encryptedtext);
-	//printf("len:%d\n",len);	
-
 
 
 	//---TO MAKE IT EVEN---	
 	len=even(encryptedtext,len);
 	printf("\nplaintext:%s",encryptedtext);
-	//printf("\nlen:%d",len);
 	
 	//---TO CONVERT IT TO UPPERCASE---
 	toUpperCase(encryptedtext, len);
 	printf("\nplaintext:%s",encryptedtext);
-	//printf("\nlen:%d",len);
 	
 	//---TO DECRYPT---
 	int pos[4]; //pos[0]=r1 pos[1]= c1 pos[2]=r2 pos[3]=c2
