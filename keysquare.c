@@ -6,8 +6,6 @@
 //int main()
 void GenerateCipherKey(char key[] , char key_square[][5])
 {
-	//char key[25]="CLOWN";   // key word
-	//char key_square[5][5];   // 2 d array for storing the key square
 	
 	int *arr=(int*)calloc(26,sizeof(int));  // 26 contiguous pointers or array of 26 integers that point to -1(j), 0(non keyword letters), 1(keyword) 
 	
@@ -17,7 +15,7 @@ void GenerateCipherKey(char key[] , char key_square[][5])
 	
 	i=0; j=0; k=0;
 	
-	// filling positions of c l o w n with 1's and storing the them first in the 2d array 
+	// filling positions of the keyword with 1's and storing the them first in the 2d array 
 	for (k = 0;key[k]!='\0'; k++)
 	{
 		if(key[k]=='J')
@@ -55,28 +53,9 @@ void GenerateCipherKey(char key[] , char key_square[][5])
 				j=0;
 			}
 		}
-	}
-	
-		
-/*
-	//to print arr
-	for(i=0;i<26;i++)
-		printf("%d\n",arr[i]);
-	
-	//to print key square
-	for(int =0;i<5;i++)
-    {
-        for(int j=0;j<5;j++)
-        {
-            printf("%c",key_square[i][j]);
-        }
-        printf("\n");
-
-    }
-	
-*/
+	}	
 	
 	free(arr);
-	//return 0;
+
 }
 
